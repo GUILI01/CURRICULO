@@ -1,122 +1,283 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Retro - Jessica Almeida</title>
+    <title>Portfólio - Kiều Vy (Zyy)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* Aplica a fonte pixelada apenas aos títulos principais */
-        .font-pixel { 
-            font-family: 'Press Start 2P', cursive; 
+        /* CSS Personalizado para a fonte e efeitos específicos */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Volkhov:wght@700&display=swap');
+
+        :root {
+            --primary-color: #E66F5A; /* Coral do original */
+            --bg-light: #FDF8F5;
+            --text-dark: #333333;
         }
-        /* Efeito de sombra sólida clássica de jogos 8-bits */
-        .pixel-card { 
-            box-shadow: 6px 6px 0px 0px #000000; 
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
-        .pixel-tag { 
-            box-shadow: 3px 3px 0px 0px #000000; 
+
+        .font-heading {
+            font-family: 'Volkhov', serif;
+            color: var(--primary-color);
         }
-        .pixel-btn { 
-            box-shadow: 4px 4px 0px 0px #000000; 
-            transition: all 0.1s ease-in-out; 
+
+        /* Efeito de sobreposição de imagem para o cabeçalho */
+        .header-illustration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.8;
         }
-        /* Feedback visual ao clicar no botão */
-        .pixel-btn:active { 
-            box-shadow: 0px 0px 0px 0px #000000; 
-            transform: translate(4px, 4px); 
+
+        /* Linha do tempo na seção de experiência */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 4.5px;
+            top: 1rem;
+            width: 1px;
+            height: calc(100% + 1rem);
+            background-color: #e0e0e0;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
         }
     </style>
+    <script>
+        // Configuração opcional do Tailwind para usar cores personalizadas
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coral: '#E66F5A',
+                        'bg-light': '#FDF8F5',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-slate-950 text-slate-200 p-4 md:p-8 font-mono antialiased">
+<body class="antialiased text-gray-800">
 
-    <div class="max-w-3xl mx-auto space-y-8">
+    <header class="relative pt-16 pb-24 overflow-hidden">
+        <img src="path/to/your/header-illustration.png" alt="" class="header-illustration max-w-full lg:max-w-3xl">
         
-        <header class="bg-slate-900 border-4 border-slate-700 p-6 pixel-card text-center space-y-4 mt-4">
-            <h1 class="font-pixel text-2xl md:text-4xl text-emerald-400 uppercase tracking-wider">Jessica Almeida</h1>
-            <p class="font-pixel text-xs md:text-sm text-amber-400">Assistente / Suporte Técnico</p>
+        <div class="container mx-auto px-6 lg:px-20 grid lg:grid-cols-2 gap-12 items-center">
             
-            <div class="text-xs md:text-sm text-slate-400 pt-3 space-y-2 border-t-4 border-dotted border-slate-800">
-                <p>📞 (65) 99210-4452  |  ✉️ jessicaalmeidasilva05@gmail.com</p>
-                <p>📍 Cuiabá, MT  |  🔗 linkedin.com/in/jessica-almeida-487643333</p>
+            <div class="z-10 text-center lg:text-left">
+                <h1 class="font-heading text-6xl md:text-7xl mb-1 flex flex-col">
+                    <span class="text-coral">PORT</span>
+                    <span class="text-coral">FOLIO</span>
+                </h1>
+                <p class="text-gray-600 text-sm tracking-wide mt-2">Illustration Artist / Graphic Designer</p>
+                
+                <div class="mt-20 lg:mt-24 space-y-4">
+                    <h2 class="font-heading text-5xl md:text-6xl text-coral">HELLO!</h2>
+                    <p class="text-gray-700 max-w-lg mx-auto lg:mx-0">
+                        My name is <span class="font-semibold text-gray-900">Kiều Vy</span>, you can call me Zyy. I have 3 years of experience in the field of design and illustration artist, I always want to create explosive works.
+                    </p>
+                    <p class="text-gray-700 max-w-lg mx-auto lg:mx-0 pt-3">
+                        I consider myself a detail-oriented, hardworking person who's willing to learn at every step of the way.
+                    </p>
+                    
+                    <div class="flex flex-col items-center lg:items-start space-y-3 pt-6 text-sm text-gray-600">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-coral" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                            <span>hoasivy@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <img src="https://cdn.simpleicons.org/behance/E66F5A" alt="Behance" class="w-4 h-4">
+                            <span>behance.net/vyklu</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-coral" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                            <span>0378708376</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </header>
-
-        <section class="bg-slate-900 border-4 border-slate-700 p-6 pixel-card space-y-3">
-            <h2 class="font-pixel text-xs md:text-sm text-cyan-400">> RESUMO_PROFISSIONAL</h2>
-            <p class="text-sm leading-relaxed text-slate-300">
-                Estudante de Ciências da Computação com experiência em suporte técnico e organização de processos. Possuo domínio em ferramentas de TI e aplico uma abordagem proativa para otimizar rotinas administrativas.
-            </p>
-        </section>
-
-        <section class="bg-slate-900 border-4 border-slate-700 p-6 pixel-card space-y-6">
-            <h2 class="font-pixel text-xs md:text-sm text-fuchsia-400">> QUESTS_EXPERIENCIA</h2>
             
-            <div class="space-y-6">
-                <div class="border-l-4 border-emerald-500 pl-4 space-y-2">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                        <span class="font-bold text-slate-100 text-sm md:text-base">Estagiária de TI | Defensoria Pública</span>
-                        <span class="text-xs text-slate-400 italic bg-slate-800 px-2 py-0.5 border border-slate-700">Julho/2024 - Atual</span>
-                    </div>
-                    <ul class="list-disc list-inside text-sm text-slate-300 space-y-1 pl-2">
-                        <li>Suporte técnico N1 (hardware e software).</li>
-                        <li>Gerenciamento de arquivos digitais e padronização.</li>
-                        <li>Instalação de softwares e certificados digitais.</li>
-                    </ul>
+            <div class="relative z-10">
+                <div class="aspect-w-3 aspect-h-4 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <img src="path/to/your/main-photo.jpg" alt="Kiều Vy (Zyy)" class="w-full h-full object-cover">
                 </div>
-
-                <div class="border-l-4 border-slate-600 pl-4 space-y-2">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                        <span class="font-bold text-slate-100 text-sm md:text-base">Educadora | Microlins</span>
-                        <span class="text-xs text-slate-400 italic bg-slate-800 px-2 py-0.5 border border-slate-700">Dezembro/2023 - Junho/2024</span>
-                    </div>
-                    <ul class="list-disc list-inside text-sm text-slate-300 space-y-1 pl-2">
-                        <li>Suporte e orientação a alunos para desenvolvimento contínuo.</li>
-                    </ul>
-                </div>
+                <img src="path/to/your/non-la.png" alt="" class="absolute -top-12 -right-12 w-24 h-24 transform rotate-12 opacity-80 hidden lg:block">
             </div>
-        </section>
-
-        <section class="bg-slate-900 border-4 border-slate-700 p-6 pixel-card space-y-4">
-            <h2 class="font-pixel text-xs md:text-sm text-amber-400">> LEVEL_UP (EDUCACAO)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
-                <div class="bg-slate-800 border-2 border-slate-700 p-4">
-                    <p class="font-bold text-slate-100 text-sm">Bacharel em Ciências da Computação</p>
-                    <p class="text-xs text-cyan-400 mt-1">UNIC</p>
-                    <p class="text-xs text-slate-400 italic mt-2">> Classe de 2024 - 2027</p>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 p-4">
-                    <p class="font-bold text-slate-100 text-sm">Informática</p>
-                    <p class="text-xs text-cyan-400 mt-1">Microlins</p>
-                    <p class="text-xs text-slate-400 italic mt-2">> Classe de 2023 - 2025</p>
-                </div>
-                
-            </div>
-        </section>
-
-        <section class="bg-slate-900 border-4 border-slate-700 p-6 pixel-card space-y-4">
-            <h2 class="font-pixel text-xs md:text-sm text-cyan-400">> INVENTARIO_CERTIFICADOS</h2>
-            <div class="flex flex-wrap gap-3 pt-2">
-                <span class="bg-slate-800 border-2 border-cyan-600 text-cyan-300 px-3 py-1.5 text-xs font-bold pixel-tag">Banco de Dados SQL (Iniciante)</span>
-                <span class="bg-slate-800 border-2 border-emerald-600 text-emerald-300 px-3 py-1.5 text-xs font-bold pixel-tag">Redes (Wireless e Estruturação)</span>
-                <span class="bg-slate-800 border-2 border-fuchsia-600 text-fuchsia-300 px-3 py-1.5 text-xs font-bold pixel-tag">Desenvolvimento Web (HTML, CSS, JS, Wordpress)</span>
-                <span class="bg-slate-800 border-2 border-amber-600 text-amber-300 px-3 py-1.5 text-xs font-bold pixel-tag">Desenvolvimento de Games (Iniciante)</span>
-                <span class="bg-slate-800 border-2 border-blue-600 text-blue-300 px-3 py-1.5 text-xs font-bold pixel-tag">Pacote Office 2021</span>
-                <span class="bg-slate-800 border-2 border-rose-600 text-rose-300 px-3 py-1.5 text-xs font-bold pixel-tag">Montagem e Manutenção de PCs</span>
-                <span class="bg-slate-800 border-2 border-violet-600 text-violet-300 px-3 py-1.5 text-xs font-bold pixel-tag">Lógica de Programação</span>
-            </div>
-        </section>
-
-        <div class="text-center pt-4 pb-8">
-            <a href="mailto:jessicaalmeidasilva05@gmail.com" class="inline-block bg-emerald-500 text-slate-950 font-pixel text-xs md:text-sm px-6 py-4 border-4 border-emerald-700 pixel-btn hover:bg-emerald-400">
-                ENVIAR_MENSAGEM.EXE
-            </a>
+            
         </div>
+    </header>
 
-    </div>
+    <section class="bg-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[url('path/to/your/vietnam-pattern.svg')] bg-repeat bg-center"></div>
+        
+        <div class="container mx-auto px-6 lg:px-20 grid lg:grid-cols-2 gap-16 items-start relative z-10">
+            
+            <div class="space-y-12">
+                <div class="flex items-center space-x-6">
+                    <img src="path/to/your/smaller-photo.jpg" alt="Kiều Vy" class="w-24 h-24 rounded-full object-cover border-4 border-bg-light shadow">
+                    <div class="space-y-1">
+                        <h3 class="font-heading text-2xl text-coral">Kiều Vy (Zyy)</h3>
+                        <p class="text-sm text-gray-500">Curriculum Vitae</p>
+                    </div>
+                </div>
+                
+                <nav class="space-y-3 font-heading text-lg">
+                    <a href="#experience" class="block text-coral hover:text-gray-900 transition">Experience</a>
+                    <a href="#education" class="block text-gray-400 hover:text-coral transition">Education</a>
+                    <a href="#skills" class="block text-gray-400 hover:text-coral transition">Skills</a>
+                    <a href="#softwares" class="block text-gray-400 hover:text-coral transition">Softwares</a>
+                </nav>
+                
+                <img src="path/to/your/non-la.png" alt="" class="w-32 h-32 mx-auto lg:mx-0 opacity-80 pt-8">
+            </div>
+            
+            <div class="space-y-16">
+                
+                <div id="experience" class="space-y-8">
+                    <h3 class="font-heading text-3xl text-coral">Experience</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <p class="text-sm text-gray-500 font-medium">2023 - 2024</p>
+                            <p class="text-coral font-semibold">Graphic Designer/ 2D Illustrator</p>
+                            <p class="text-gray-700">Poly English, 25 FIT</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="text-sm text-gray-500 font-medium">2022</p>
+                            <p class="text-coral font-semibold">2D Game Artist</p>
+                            <p class="text-gray-700">Saigon Dragon Studio</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="text-sm text-gray-500 font-medium">2021</p>
+                            <p class="text-coral font-semibold">Graphic Designer</p>
+                            <p class="text-gray-700">FC Media</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="text-sm text-gray-500 font-medium">2021 - 2024</p>
+                            <p class="text-coral font-semibold">Freelancer</p>
+                            <p class="text-gray-700">Chinsu, One One Packaging, etc.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="education" class="space-y-8">
+                    <h3 class="font-heading text-3xl text-coral">Education</h3>
+                    <div class="timeline-item">
+                        <p class="text-sm text-gray-500 font-medium">2019 - 2022</p>
+                        <p class="text-coral font-semibold">TDC - Thu Duc College Of Technology</p>
+                        <p class="text-gray-700">Thiết kế đồ họa / Graphic Designer</p>
+                    </div>
+                </div>
+                
+                <div id="skills" class="space-y-8">
+                    <h3 class="font-heading text-3xl text-coral">Skills</h3>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-gray-700 list-disc list-inside">
+                        <li>Graphic Design</li>
+                        <li>Illustration/ 2D Game Artist</li>
+                        <li>Packaging Design</li>
+                    </ul>
+                </div>
+                
+                <div id="softwares" class="space-y-8">
+                    <h3 class="font-heading text-3xl text-coral">Softwares</h3>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center space-y-2">
+                            <img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="Adobe Illustrator" class="w-12 h-12 mx-auto">
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-coral h-1.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Adobe Photoshop" class="w-12 h-12 mx-auto">
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-coral h-1.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="Adobe Premiere Pro" class="w-12 h-12 mx-auto">
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-coral h-1.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <img src="https://cdn.simpleicons.org/adobeindesign/FF3366" alt="Adobe InDesign" class="w-12 h-12 mx-auto">
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-coral h-1.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <img src="https://cdn.simpleicons.org/capcut/000000" alt="CapCut" class="w-12 h-12 mx-auto">
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-coral h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="w-12 h-12 mx-auto">
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-coral h-1.5 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="py-20 bg-bg-light">
+        <div class="container mx-auto px-6 lg:px-20 grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">
+            
+            <div class="space-y-3">
+                <p class="font-heading text-5xl text-coral">01</p>
+                <h4 class="font-semibold text-gray-900 uppercase tracking-wider text-sm">Packaging Design</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Legendary Chocolatier Vietnam<br>Chinsu Vietnam<br>Yến Song Tiên<br>Etc.</p>
+            </div>
+            
+            <div class="space-y-3">
+                <p class="font-heading text-5xl text-coral">02</p>
+                <h4 class="font-semibold text-gray-900 uppercase tracking-wider text-sm">Graphic Design</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Poly Vietnam<br>Brand Design</p>
+            </div>
+            
+            <div class="space-y-3 md:col-span-1">
+                <p class="font-heading text-5xl text-coral">03</p>
+                <h4 class="font-semibold text-gray-900 uppercase tracking-wider text-sm">Illustration Art</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Three regions of Vietnam<br>Vietnamese Literary Works<br>Minh họa lịch, bìa l...</p>
+            </div>
+            
+            <div class="space-y-3">
+                <p class="font-heading text-5xl text-coral">04</p>
+                <h4 class="font-semibold text-gray-900 uppercase tracking-wider text-sm">2D Game Art</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Saigon Dragon Studio</p>
+            </div>
+            
+        </div>
+    </footer>
 
 </body>
 </html>
